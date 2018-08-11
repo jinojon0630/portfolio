@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
     'jobs.apps.JobsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -74,10 +75,21 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+ #   DATABASES = {
+  #      'default': {
+ #           'ENGINE': 'django.db.backends.sqlite3',
+ #           'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+  #      }
+ #   }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfoliodb',                      
+        'USER': 'postgres',
+        'PASSWORD': 'lupin0630',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
